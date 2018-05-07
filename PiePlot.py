@@ -19,7 +19,7 @@ values=df_1.loc[0].drop('filename').values.flatten().tolist()
 group_names = values
 
 # group_names=['Precision','Accuracy','Completeness','Neutrality','Relevance','Readability','Trustworthiness']
-group_size=[14.28,14.28,14.28,14.28,14.28,14.28,14.28]
+group_size=[14.28,14.28,14.28,14.28,14.28,14.28,14.28,14.28]
 
 one=['1','1','1','1','1','1','1']
 two=['2','2','2','2','2','2','2']
@@ -27,20 +27,20 @@ three=['3','3','3','3','3','3','3']
 four=['4','4','4','4','4','4','4']
 five=['5','5','5','5','5','5','5']
 
-subgroup_size=[4,4,4,4,4,4,4]
+subgroup_size=[4,4,4,4,4,4,4,4]
 
-a,b,c,d,e,f,g=[plt.cm.Greys, plt.cm.Purples, plt.cm.Blues, plt.cm.Greens, plt.cm.Oranges, plt.cm.Reds, plt.cm.PuBuGn]
+a,b,c,d,e,f,g,h=[plt.cm.Greys, plt.cm.Purples, plt.cm.Blues, plt.cm.Greens, plt.cm.Oranges, plt.cm.Reds, plt.cm.PuBuGn,plt.cm.YlOrRd]
 
-all_color = [a(0),a(0.6),b(0),b(0.6),c(0),c(0.6),d(0),d(0.6),e(0),e(0.6),f(0),f(0.6),g(0),g(0.4)]
+all_color = [a(0),a(0.6),a(0),b(0.6),a(0),c(0.6),a(0),d(0.6),a(0),e(0.6),a(0),f(0.6),a(0),g(0.4),a(0.0),h(0.2)]
 
-color_1 = [a(0),b(0),c(0.0),d(0),e(0),f(0),g(0.0)]
-color_2 =[a(0),b(0),c(0.0),d(0),e(0),f(0),g(0.0)]
-color_3 =[a(0),b(0),c(0.0),d(0),e(0),f(0),g(0.0)]
-color_4 =[a(0),b(0),c(0.0),d(0),e(0),f(0),g(0.0)]
-color_5 =[a(0),b(0),c(0.0),d(0),e(0),f(0),g(0.0)]
+color_1 = [a(0),a(0),a(0.0),a(0),a(0),a(0),a(0.0),a(0.0)]
+color_2 =[a(0),a(0),a(0.0),a(0),a(0),a(0),a(0.0),a(0.0)]
+color_3 =[a(0),a(0),a(0.0),a(0),a(0),a(0),a(0.0),a(0.0)]
+color_4 =[a(0),a(0),a(0.0),a(0),a(0),a(0),a(0.0),a(0.0)]
+color_5 =[a(0),a(0),a(0.0),a(0),a(0),a(0),a(0.0),a(0.0)]
 
 
-#  ['Accuracy', 'Completeness', 'Neutrality', 'Relevance', 'Readiblity', 'Trustworthyness', 'Precision']
+#  ['OverallQuality','Accuracy','Completeness', 'Neutrality', 'Relevance', 'Readiblity', 'Trustworthyness', 'Precision']
 for n, i in enumerate(values):
 	k=n+n
 	if(i > 4):
@@ -71,9 +71,9 @@ for n, i in enumerate(values):
 start = time.time()
 
 fig, ax=plt.subplots()
-mpl.rcParams['font.size'] = 20.0
+mpl.rcParams['font.size'] = 15.0
 ax.axis('equal')
-mypie, _ = ax.pie(group_size, radius=1.25, labels=group_names, colors=color_5) #[a(0),b(0),c(0.6),d(0),e(0),f(0),g(0.4)])
+mypie, _ = ax.pie(group_size, radius=1.25, labels=legend_name, colors=color_5) #[a(0),b(0),c(0.6),d(0),e(0),f(0),g(0.4)])
 plt.setp(mypie, width=0.3, edgecolor='black')
 
 
@@ -101,7 +101,7 @@ colors=color_1)#[a(0.6),b(0.6),c(0.6),d(0.6),e(0.6),f(0.6),g(0.4)])
 plt.setp(mypie5, width=0.25, edgecolor='black')
 plt.margins(0,0)
 
-plt.legend(mypie5, legend_name, loc="best")
+plt.legend(mypie5, legend_name, loc="lower left")
 
 #show it
 plt.show()
