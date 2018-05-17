@@ -31,7 +31,7 @@ subgroup_size=[4,4,4,4,4,4,4,4]
 
 a,b,c,d,e,f,g,h=[plt.cm.Greys, plt.cm.Purples, plt.cm.Blues, plt.cm.Greens, plt.cm.Oranges, plt.cm.Reds, plt.cm.PuBuGn,plt.cm.YlOrRd]
 
-all_color = [a(0),a(0.6),a(0),b(0.6),a(0),c(0.6),a(0),d(0.6),a(0),e(0.6),a(0),f(0.6),a(0),g(0.4),a(0.0),h(0.2)]
+all_color = [a(0),"#bc1a22",a(0),"#f87f60",a(0),"#774fda",a(0),"#d1b1d2",a(0),"#3fb56c",a(0),"#e1e33c",a(0),"#07b0cc",a(0.0),"#f044f2"]
 
 color_1 = [a(0),a(0),a(0.0),a(0),a(0),a(0),a(0.0),a(0.0)]
 color_2 =[a(0),a(0),a(0.0),a(0),a(0),a(0),a(0.0),a(0.0)]
@@ -73,7 +73,7 @@ start = time.time()
 fig, ax=plt.subplots()
 mpl.rcParams['font.size'] = 15.0
 ax.axis('equal')
-mypie, _ = ax.pie(group_size, radius=1.25, labels=legend_name, colors=color_5) #[a(0),b(0),c(0.6),d(0),e(0),f(0),g(0.4)])
+mypie, _ = ax.pie(group_size, radius=1.25, labels=group_names, colors=color_5) #[a(0),b(0),c(0.6),d(0),e(0),f(0),g(0.4)])
 plt.setp(mypie, width=0.3, edgecolor='black')
 
 
